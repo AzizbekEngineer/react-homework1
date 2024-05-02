@@ -1,13 +1,133 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 85%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  color: inherit;
+}
+.df {
+  display: flex;
+  align-items: center;
+}
+.comment {
+  width: 100%;
+  background: #f1d3b9;
+}
+.comment__cards {
+  padding: 40px 0;
+  display: flex;
+  gap: 50px;
+}
+.comment__card,
+.comment__card__info {
+  width: calc(50% - 25px);
+}
+.comment__card img {
+  width: 100%;
+  height: 100%;
+}
+.comment__card__info {
+  background: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #b45f4d;
+}
+.comment__title {
+  text-align: center;
+  font-size: 25px;
+  line-height: 30px;
+}
+.comment__desc {
+  padding: 10px 0;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.follow {
+  padding: 40px 0;
+}
+.follow__title {
+  padding: 20px 0;
+  font-size: 24px;
+  text-align: center;
+}
+.follow__cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+.follow__card img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .follow__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 930px) {
+  .comment__cards {
+    flex-direction: column;
+    grid-gap: 20px;
+  }
+  .comment__card,
+  .comment__card__info {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .follow__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 570px) {
+  .follow__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .comment__cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .comment__card,
+  .comment__card__info {
+    width: 100%;
+  }
+  .comment__card__info {
+    padding: 10px;
+  }
+  .follow__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+  }
 }
